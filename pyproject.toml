@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthdata-insight"
+version = "1.0.0"
+description = "A FHIR R4 healthcare data quality, privacy, and public-health analytics platform (research prototype)."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.38",
+    "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "coverage>=7.0",
+    "pyflakes>=3.0",
+    "markdown>=3.5",  # scripts/build_report.py (technical report PDF)
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+healthdata_insight = ["sample_data/*.json", "sample_data/*.ndjson", "r/*.R"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]  # the evaluation harness (evaluation/) is tested but not part of the installed package
+addopts = "-ra"

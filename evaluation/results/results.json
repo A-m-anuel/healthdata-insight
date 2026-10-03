@@ -1,0 +1,947 @@
+{
+  "meta": {
+    "started": "2026-10-03T17:08:24+00:00",
+    "finished": "2026-10-03T17:26:52+00:00",
+    "reference_date": "2026-10-03",
+    "seed": 20261003,
+    "batch_size": 150,
+    "per_defect_per_batch": 25,
+    "per_duplicate_case_per_batch": 10,
+    "data_url": "https://synthetichealth.github.io/synthea-sample-data/downloads/synthea_sample_data_fhir_r4_sep2019.zip",
+    "data_sha256": "a6fc595d9c0f4c646746af42f861b5a12d03c856af158dd837c764dfb81b66f8",
+    "environment": {
+      "python": "3.13.1",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+      "logical_cpus": 16,
+      "total_ram_gb": 16.0,
+      "free_commit_gb_at_start": 4.12,
+      "packages": {
+        "healthdata-insight": "0.1.0",
+        "streamlit": "1.65.0",
+        "pandas": "3.0.6",
+        "altair": "6.3.0"
+      },
+      "sqlite": "3.45.3",
+      "r": "Rscript (R) version 4.6.1 (2026-06-24)",
+      "git_available": true
+    },
+    "orchestrator_peak_memory": {
+      "peak_working_set_mb": 2017.9,
+      "peak_commit_mb": 2492.0
+    }
+  },
+  "dataset": {
+    "patients": 1180,
+    "batches": 8,
+    "bytes": 1340899942,
+    "resources": 527113,
+    "in_scope": 269875,
+    "by_type": {
+      "Observation": 259929,
+      "Claim": 60970,
+      "Encounter": 46868,
+      "ExplanationOfBenefit": 46868,
+      "Procedure": 36451,
+      "DiagnosticReport": 18304,
+      "Immunization": 15013,
+      "MedicationRequest": 14102,
+      "Condition": 8766,
+      "CareTeam": 3603,
+      "CarePlan": 3603,
+      "Practitioner": 2980,
+      "Organization": 2979,
+      "Goal": 2969,
+      "Patient": 1180,
+      "ImagingStudy": 977,
+      "MedicationAdministration": 926,
+      "AllergyIntolerance": 567,
+      "Device": 58
+    }
+  },
+  "baseline": {
+    "errors": 0,
+    "invalid_records": 0,
+    "warnings": 2914,
+    "error_examples": [],
+    "issues_by_code": {
+      "warning|duplicate-record|Organization": 1200,
+      "warning|duplicate-record|Practitioner": 1200,
+      "warning|duplicate-record|Observation": 385,
+      "warning|duplicate-record|Procedure": 1,
+      "warning|duplicate-record|Patient": 1
+    },
+    "unsupported_type_issues_per_batch": [
+      16,
+      16,
+      16,
+      15,
+      16,
+      16,
+      16,
+      16
+    ],
+    "completeness": 1.0,
+    "duplicates_flagged": 2787,
+    "dimension_scores": {
+      "completeness": 1.0,
+      "validity": 1.0,
+      "consistency": 1.0,
+      "uniqueness": 0.9947127086601925
+    },
+    "parse_issues": 0
+  },
+  "validation_defects": {
+    "per_defect": {
+      "observation_status_not_in_code_set": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "patient_gender_not_in_code_set": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_impossible_date": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "patient_birthdate_wrong_format": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "condition_subject_not_an_object": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_code_not_an_object": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_value_not_numeric": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_value_and_data_absent_reason": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_invalid_id": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_unknown_resource_type": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_subject_wrong_type": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_status_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "condition_subject_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_code_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_value_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      }
+    },
+    "injected": 3000,
+    "detected_expected_code": 3000,
+    "clean_records": 7903695,
+    "clean_flagged_invalid": 0,
+    "detection_rate": 1.0,
+    "record_classification": {
+      "tp": 3000,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tn": 7903695,
+      "accuracy": 1.0,
+      "specificity": 1.0
+    }
+  },
+  "quality_defects": {
+    "per_defect": {
+      "patient_name_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "missing_field_increase": 200,
+        "detection_rate": 1.0
+      },
+      "patient_gender_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "missing_field_increase": 200,
+        "detection_rate": 1.0
+      },
+      "patient_birthdate_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "missing_field_increase": 200,
+        "detection_rate": 1.0
+      },
+      "condition_code_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "missing_field_increase": 200,
+        "detection_rate": 1.0
+      },
+      "condition_onset_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "missing_field_increase": 200,
+        "detection_rate": 1.0
+      },
+      "observation_effective_missing": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "missing_field_increase": 200,
+        "detection_rate": 1.0
+      },
+      "condition_onset_in_future": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 104,
+        "other_codes": 104,
+        "detection_rate": 1.0
+      },
+      "condition_abatement_before_onset": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 200,
+        "other_codes": 86,
+        "detection_rate": 1.0
+      },
+      "observation_before_birth": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "observation_unresolved_subject": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      },
+      "condition_status_conflict": {
+        "injected": 200,
+        "detected": 200,
+        "flagged_invalid": 0,
+        "other_codes": 0,
+        "detection_rate": 1.0
+      }
+    },
+    "injected": 2200,
+    "detected_expected_code": 2200,
+    "clean_records": 5796043,
+    "clean_flagged_invalid": 0,
+    "detection_rate": 1.0,
+    "completeness_check": {
+      "missing_fields_increase": 1200,
+      "completeness_defects_injected": 1200,
+      "passes": 48,
+      "passes_matching_exactly": 48
+    },
+    "score_change": {
+      "completeness": {
+        "before_mean": 100.0,
+        "after_mean": 99.92392715967654
+      },
+      "validity": {
+        "before_mean": 100.0,
+        "after_mean": 99.9405176648663
+      },
+      "consistency": {
+        "before_mean": 100.0,
+        "after_mean": 99.6362513135962
+      },
+      "uniqueness": {
+        "before_mean": 99.4626694072374,
+        "after_mean": 99.46298416072206
+      }
+    }
+  },
+  "malformed_lines": {
+    "lines": 1000,
+    "injected": {
+      "malformed-json": 50,
+      "missing-resource-type": 50,
+      "invalid-structure": 50
+    },
+    "detected": {
+      "malformed-json": 50,
+      "missing-resource-type": 50,
+      "invalid-structure": 50
+    },
+    "resources_read": 850,
+    "expected_resources_read": 850
+  },
+  "duplicates": {
+    "per_case": {
+      "exact_copy_same_id": {
+        "injected": 80,
+        "flagged": 80,
+        "expected_code": 80,
+        "is_duplicate": true,
+        "flag_rate": 1.0
+      },
+      "same_id_different_content": {
+        "injected": 80,
+        "flagged": 80,
+        "expected_code": 80,
+        "is_duplicate": true,
+        "flag_rate": 1.0
+      },
+      "same_content_new_id": {
+        "injected": 80,
+        "flagged": 80,
+        "expected_code": 80,
+        "is_duplicate": true,
+        "flag_rate": 1.0
+      },
+      "patient_shared_identifiers": {
+        "injected": 80,
+        "flagged": 80,
+        "expected_code": 80,
+        "is_duplicate": true,
+        "flag_rate": 1.0
+      },
+      "patient_new_identifiers_same_demographics": {
+        "injected": 80,
+        "flagged": 0,
+        "expected_code": 0,
+        "is_duplicate": true,
+        "flag_rate": 0.0
+      },
+      "observation_value_changed_new_id": {
+        "injected": 80,
+        "flagged": 0,
+        "expected_code": 0,
+        "is_duplicate": false,
+        "flag_rate": 0.0
+      },
+      "observation_date_changed_new_id": {
+        "injected": 80,
+        "flagged": 0,
+        "expected_code": 0,
+        "is_duplicate": false,
+        "flag_rate": 0.0
+      },
+      "patient_different_person": {
+        "injected": 80,
+        "flagged": 0,
+        "expected_code": 0,
+        "is_duplicate": false,
+        "flag_rate": 0.0
+      }
+    },
+    "all_cases": {
+      "tp": 320,
+      "fp": 0,
+      "fn": 80,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.888888888888889,
+      "tn": 240,
+      "accuracy": 0.875,
+      "specificity": 1.0
+    },
+    "excluding_fuzzy_case": {
+      "tp": 320,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tn": 240,
+      "accuracy": 1.0,
+      "specificity": 1.0
+    },
+    "baseline_flagged": {
+      "Organization|duplicate-record": 1200,
+      "Practitioner|duplicate-record": 1200,
+      "Observation|duplicate-record": 385,
+      "Procedure|duplicate-record": 1,
+      "Patient|duplicate-record": 1
+    }
+  },
+  "phi": {
+    "overall": {
+      "tp": 111104,
+      "fp": 7143,
+      "fn": 3513,
+      "precision": 0.9395925478024812,
+      "recall": 0.9693500964080372,
+      "f1": 0.9542393843616874,
+      "tn": 180509,
+      "accuracy": 0.9647466329660005,
+      "specificity": 0.9619348581416665
+    },
+    "by_scope": {
+      "free text": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2333,
+        "precision": null,
+        "recall": 0.0,
+        "f1": null,
+        "tn": 0,
+        "accuracy": 0.0,
+        "specificity": null
+      },
+      "narrative": {
+        "tp": 1180,
+        "fp": 5963,
+        "fn": 0,
+        "precision": 0.16519669606607867,
+        "recall": 1.0,
+        "f1": 0.2835516039889463,
+        "tn": 0,
+        "accuracy": 0.16519669606607867,
+        "specificity": 0.0
+      },
+      "reference display": {
+        "tp": 94853,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tn": 169889,
+        "accuracy": 1.0,
+        "specificity": 1.0
+      },
+      "structured": {
+        "tp": 15071,
+        "fp": 1180,
+        "fn": 1180,
+        "precision": 0.9273890837486923,
+        "recall": 0.9273890837486923,
+        "f1": 0.9273890837486923,
+        "tn": 10620,
+        "accuracy": 0.9158675270043849,
+        "specificity": 0.9
+      }
+    },
+    "by_location_type": {
+      "free text: condition_note_with_address": {
+        "is_phi": true,
+        "locations": 1153,
+        "flagged": 0
+      },
+      "free text: observation_free_text_value": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "narrative: narrative without identifying content": {
+        "is_phi": false,
+        "locations": 4783,
+        "flagged": 4783
+      },
+      "narrative: observation_narrative_decoy": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "narrative: observation_narrative_with_name": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "reference display: condition_asserter_display_decoy": {
+        "is_phi": false,
+        "locations": 1062,
+        "flagged": 0
+      },
+      "reference display: condition_subject_display_name": {
+        "is_phi": true,
+        "locations": 1117,
+        "flagged": 1117
+      },
+      "reference display: display text naming the patient": {
+        "is_phi": true,
+        "locations": 93736,
+        "flagged": 93736
+      },
+      "reference display: display text of another party": {
+        "is_phi": false,
+        "locations": 168827,
+        "flagged": 0
+      },
+      "structured: birth date (day/month, or age 90+)": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "structured: birth place (city)": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "structured: city (smaller than a state)": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "structured: date of death": {
+        "is_phi": true,
+        "locations": 180,
+        "flagged": 180
+      },
+      "structured: latitude / longitude": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "structured: name": {
+        "is_phi": true,
+        "locations": 1509,
+        "flagged": 1509
+      },
+      "structured: name of a relative": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "structured: non-identifying extension (disability-adjusted-life-years)": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "structured: non-identifying extension (quality-adjusted-life-years)": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "structured: non-identifying extension (us-core-birthsex)": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "structured: non-identifying extension (us-core-ethnicity)": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "structured: non-identifying extension (us-core-race)": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 0
+      },
+      "structured: not an identifier category": {
+        "is_phi": false,
+        "locations": 4720,
+        "flagged": 0
+      },
+      "structured: postal code": {
+        "is_phi": true,
+        "locations": 893,
+        "flagged": 893
+      },
+      "structured: record or identifying number": {
+        "is_phi": true,
+        "locations": 5409,
+        "flagged": 5409
+      },
+      "structured: state / country: not smaller than a state": {
+        "is_phi": false,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "structured: street address": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      },
+      "structured: telephone / e-mail": {
+        "is_phi": true,
+        "locations": 1180,
+        "flagged": 1180
+      }
+    },
+    "unexpected_findings": {},
+    "precision_high_medium_only": 0.9490633568811023,
+    "findings_by_severity": {
+      "high|phi": 105311,
+      "low|not phi": 1180,
+      "medium|not phi": 5963,
+      "medium|phi": 5793
+    },
+    "detector_seconds": 1.4577923000324517,
+    "resources_scanned": 527113
+  },
+  "performance": {
+    "batch_mode": {
+      "patients": 1180,
+      "resources": 527113,
+      "ingest_seconds": 41.799751200014725,
+      "pipeline_seconds": 51.56282800005283,
+      "end_to_end_seconds": 93.36257920006756,
+      "resources_per_second_end_to_end": 5645.870160360979,
+      "resources_per_second_pipeline": 10222.732546776913,
+      "r_status": [
+        "ok"
+      ]
+    },
+    "single_process_series": [
+      {
+        "patients": 50,
+        "resources": 17395,
+        "repeats": 3,
+        "median_stage_seconds": {
+          "ingest": 1.2501538000069559,
+          "load": 0.3179666000069119,
+          "validate": 0.41005819995189086,
+          "quality": 0.0001439000479876995,
+          "summary": 0.0028433999978005886,
+          "phi_scan": 0.03996319998987019,
+          "analytics": 0.6015336000127718,
+          "r_analysis": 0.5586755000404082,
+          "persist": 0.02608479995978996
+        },
+        "median_end_to_end_seconds": 3.2003511000657454,
+        "median_processing_seconds": 1.951691500027664,
+        "resources_per_second_end_to_end": 5435.341141052509,
+        "peak_commit_mb_max": 722.4,
+        "peak_working_set_mb_max": 256.0
+      },
+      {
+        "patients": 150,
+        "resources": 64078,
+        "repeats": 3,
+        "median_stage_seconds": {
+          "ingest": 5.044540800037794,
+          "load": 1.4550311000202782,
+          "validate": 1.8301276999991387,
+          "quality": 0.0003133999998681247,
+          "summary": 0.007334500027354807,
+          "phi_scan": 0.16127319994848222,
+          "analytics": 2.0506682000122964,
+          "r_analysis": 0.8385497000417672,
+          "persist": 0.07189520000247285
+        },
+        "median_end_to_end_seconds": 11.45821110001998,
+        "median_processing_seconds": 6.413670299982186,
+        "resources_per_second_end_to_end": 5592.32147502399,
+        "peak_commit_mb_max": 1139.1,
+        "peak_working_set_mb_max": 669.2
+      },
+      {
+        "patients": 300,
+        "resources": 119424,
+        "repeats": 3,
+        "median_stage_seconds": {
+          "ingest": 9.676649400033057,
+          "load": 3.23828470002627,
+          "validate": 2.879246099968441,
+          "quality": 0.0005003000260330737,
+          "summary": 0.012807799968868494,
+          "phi_scan": 0.31622239999705926,
+          "analytics": 3.8235983999911696,
+          "r_analysis": 1.1482512999791652,
+          "persist": 0.15381460002390668
+        },
+        "median_end_to_end_seconds": 21.441031900059897,
+        "median_processing_seconds": 11.613818099955097,
+        "resources_per_second_end_to_end": 5569.881177205206,
+        "peak_commit_mb_max": 1638.3,
+        "peak_working_set_mb_max": 1164.8
+      },
+      {
+        "patients": 600,
+        "resources": 247861,
+        "repeats": 3,
+        "median_stage_seconds": {
+          "ingest": 20.166412800026592,
+          "load": 6.698124999995343,
+          "validate": 6.007425900024828,
+          "quality": 0.0012103000190109015,
+          "summary": 0.2346428000018932,
+          "phi_scan": 1.7164289000211284,
+          "analytics": 7.687582199985627,
+          "r_analysis": 2.1468247000011615,
+          "persist": 0.3073374000377953
+        },
+        "median_end_to_end_seconds": 45.03105290007079,
+        "median_processing_seconds": 24.83855649997713,
+        "resources_per_second_end_to_end": 5504.22395296936,
+        "peak_commit_mb_max": 2781.2,
+        "peak_working_set_mb_max": 2297.9
+      }
+    ],
+    "skipped": [
+      {
+        "patients": 1180,
+        "needed_gb_estimate": 6.5,
+        "free_commit_gb": 4.26
+      }
+    ]
+  },
+  "sanitization": {
+    "default": {
+      "settings": {
+        "identifiers": "pseudonymize",
+        "addresses": "generalize",
+        "person_dates": "year",
+        "group_ages_over_89": true,
+        "event_dates": "month",
+        "pseudonymize_ids": true,
+        "stable_pseudonyms": true
+      },
+      "resources_in": 527113,
+      "resources_out": 527113,
+      "seconds": 58.98522419988876,
+      "output_bytes": 638904016,
+      "actions": {
+        "Patient.address generalized": 1180,
+        "Patient.birthDate reduced to year": 1180,
+        "Patient.deceasedDateTime reduced to year": 180,
+        "Patient.identifier pseudonymized": 5409,
+        "Patient.name removed": 1180,
+        "Patient.telecom removed": 1180,
+        "age 90+ grouped": 53,
+        "event date generalized": 1324560,
+        "identifying extension removed": 2360,
+        "narrative removed": 4783,
+        "reference display removed": 518103,
+        "reference rewritten": 1799910,
+        "resource id pseudonymized": 527113
+      },
+      "residual_findings": {
+        "patient-identifier-pseudonym|low": 5409,
+        "patient-address-region|low": 1180,
+        "patient-birth-date|low": 1127,
+        "patient-deceased-date|low": 180,
+        "patient-birth-date|medium": 53
+      },
+      "residual_high": 0,
+      "errors_before": 0,
+      "errors_after": 0,
+      "new_error_codes": [],
+      "reference_issues_before": 0,
+      "reference_issues_after": 0,
+      "leak_checks": {
+        "name": 2689,
+        "telecom": 1180,
+        "identifier": 4229,
+        "street": 1180,
+        "postal code": 893,
+        "full birth date": 1180
+      },
+      "leaks": {
+        "name": 13,
+        "telecom": 0,
+        "identifier": 0,
+        "street": 0,
+        "postal code": 231,
+        "full birth date": 0
+      },
+      "leak_locations": {
+        "postal code|Organization": 231,
+        "postal code|Practitioner": 231,
+        "name|Practitioner": 13
+      },
+      "round_trip": {
+        "resources_read": 527113,
+        "parse_issues": 0
+      }
+    },
+    "strict": {
+      "settings": {
+        "identifiers": "remove",
+        "addresses": "remove",
+        "person_dates": "remove",
+        "group_ages_over_89": true,
+        "event_dates": "year",
+        "pseudonymize_ids": true,
+        "stable_pseudonyms": true
+      },
+      "resources_in": 527113,
+      "resources_out": 527113,
+      "seconds": 55.706306700070854,
+      "output_bytes": 634512173,
+      "actions": {
+        "Patient.address removed": 1180,
+        "Patient.birthDate removed": 1180,
+        "Patient.deceasedDateTime removed": 180,
+        "Patient.identifier removed": 1180,
+        "Patient.name removed": 1180,
+        "Patient.telecom removed": 1180,
+        "event date generalized": 1324560,
+        "identifying extension removed": 2360,
+        "narrative removed": 4783,
+        "reference display removed": 518103,
+        "reference rewritten": 1799910,
+        "resource id pseudonymized": 527113
+      },
+      "residual_findings": {},
+      "residual_high": 0,
+      "errors_before": 0,
+      "errors_after": 0,
+      "new_error_codes": [],
+      "reference_issues_before": 0,
+      "reference_issues_after": 0,
+      "leak_checks": {
+        "name": 2689,
+        "telecom": 1180,
+        "identifier": 4229,
+        "street": 1180,
+        "postal code": 893,
+        "full birth date": 1180
+      },
+      "leaks": {
+        "name": 13,
+        "telecom": 0,
+        "identifier": 0,
+        "street": 0,
+        "postal code": 231,
+        "full birth date": 0
+      },
+      "leak_locations": {
+        "postal code|Organization": 231,
+        "postal code|Practitioner": 231,
+        "name|Practitioner": 13
+      },
+      "round_trip": null
+    }
+  },
+  "information": {
+    "records_raw_vs_analytic": {
+      "patients": [
+        1179,
+        1179
+      ],
+      "conditions": [
+        8766,
+        8766
+      ],
+      "observations": [
+        259544,
+        259544
+      ]
+    },
+    "gender_identical": true,
+    "gender_raw": {
+      "male": 566,
+      "female": 613
+    },
+    "age_group_raw_exact": {
+      "80+": 126,
+      "18-34": 236,
+      "0-17": 150,
+      "50-64": 253,
+      "35-49": 213,
+      "65-79": 201
+    },
+    "age_group_analytic": {
+      "80+": 128,
+      "18-34": 234,
+      "0-17": 149,
+      "50-64": 257,
+      "35-49": 211,
+      "65-79": 200
+    },
+    "age_group_agreement": 0.989821882951654,
+    "age_group_distribution_tvd": 0.005089058524173028,
+    "state_identical": true,
+    "distinct_cities_raw": 243,
+    "distinct_postal_codes_raw": 135,
+    "distinct_observation_days_raw": 8677,
+    "distinct_observation_months_analytic": 796,
+    "condition_codes": [
+      137,
+      137
+    ],
+    "max_prevalence_difference_pct_points": 0.0,
+    "observation_series": [
+      104,
+      104
+    ],
+    "observation_series_same_n": 104,
+    "max_abs_mean_difference": 0.0,
+    "max_abs_sd_difference": 0.0,
+    "observation_months_identical": true,
+    "condition_months_identical": true,
+    "observation_months": 796,
+    "linked_conditions": [
+      8759,
+      8759
+    ],
+    "linked_observations": [
+      259426,
+      259426
+    ]
+  }
+}

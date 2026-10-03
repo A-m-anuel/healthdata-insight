@@ -1,0 +1,2716 @@
+{
+  "resourceType": "Bundle",
+  "id": "synthetic-sample-bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:syn-pat-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-001",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-001"
+          }
+        ],
+        "name": [
+          {
+            "family": "Sampleton",
+            "given": [
+              "Quinn"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1951-09-21",
+        "address": [
+          {
+            "state": "CA",
+            "country": "US",
+            "line": [
+              "894 Example Street"
+            ],
+            "city": "Riverton",
+            "postalCode": "80888"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0103",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Quinn Sampleton</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-001-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-001-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-001"
+        },
+        "effectiveDateTime": "2022-10-04",
+        "valueQuantity": {
+          "value": 74.4,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-001-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-001-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-001"
+        },
+        "effectiveDateTime": "2023-01-28",
+        "valueQuantity": {
+          "value": 50.6,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-001-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-001-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-001"
+        },
+        "effectiveDateTime": "2023-02-22",
+        "valueQuantity": {
+          "value": 99.9,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-001-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-001-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-001"
+        },
+        "effectiveDateTime": "2023-02-28",
+        "valueQuantity": {
+          "value": 177.6,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-001-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-001-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-001"
+        },
+        "effectiveDateTime": "2023-11-13",
+        "valueQuantity": {
+          "value": 51.6,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-001-5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-001-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-001"
+        },
+        "effectiveDateTime": "2022-03-17",
+        "valueQuantity": {
+          "value": 9.1,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-002",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-002",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-002"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mockford",
+            "given": [
+              "Morgan"
+            ]
+          }
+        ],
+        "gender": "other",
+        "birthDate": "1965-01-12",
+        "address": [
+          {
+            "state": "WA",
+            "country": "US",
+            "line": [
+              "259 Example Street"
+            ],
+            "city": "Springfield",
+            "postalCode": "49982"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0186",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Morgan Mockford</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-002-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-002-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ],
+          "text": "Asthma"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-002"
+        },
+        "onsetDateTime": "2017-06-22"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-002-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-002-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-002"
+        },
+        "effectiveDateTime": "2022-09-07",
+        "valueQuantity": {
+          "value": 78.8,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-002-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-002-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-002"
+        },
+        "effectiveDateTime": "2022-11-22",
+        "valueQuantity": {
+          "value": 78.7,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-002-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-002-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-002"
+        },
+        "effectiveDateTime": "2022-10-15",
+        "valueQuantity": {
+          "value": 166.9,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-002-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-002-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-002"
+        },
+        "effectiveDateTime": "2022-04-03",
+        "valueQuantity": {
+          "value": 73.5,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-002-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-002-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-002"
+        },
+        "effectiveDateTime": "2023-07-18",
+        "valueQuantity": {
+          "value": 7.9,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-003",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-003",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-003"
+          }
+        ],
+        "name": [
+          {
+            "family": "Fakely",
+            "given": [
+              "Riley"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1957-11-02",
+        "address": [
+          {
+            "state": "TX",
+            "country": "US",
+            "line": [
+              "948 Example Street"
+            ],
+            "city": "Fairview",
+            "postalCode": "69277"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0181",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Riley Fakely</div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+            "valueAddress": {
+              "city": "Riverton",
+              "state": "TX",
+              "country": "US"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-003-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-003-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidemia"
+            }
+          ],
+          "text": "Hyperlipidemia"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-003"
+        },
+        "onsetDateTime": "2017-08-24"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-003-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-003-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-003"
+        },
+        "onsetDateTime": "2021-06-08"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-003-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-003-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-003"
+        },
+        "effectiveDateTime": "2022-02-13",
+        "valueQuantity": {
+          "value": 172.0,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-003-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-003-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-003"
+        },
+        "effectiveDateTime": "2023-04-10",
+        "valueQuantity": {
+          "value": 74.3,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-003-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-003-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-003"
+        },
+        "effectiveDateTime": "2023-04-17",
+        "valueQuantity": {
+          "value": 8.4,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-003-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-003-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-003"
+        },
+        "effectiveDateTime": "2023-07-15",
+        "valueQuantity": {
+          "value": 78.0,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-004",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-004",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-004"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mockford",
+            "given": [
+              "Jordan"
+            ]
+          }
+        ],
+        "gender": "other",
+        "birthDate": "1945-12-02",
+        "address": [
+          {
+            "state": "NY",
+            "country": "US",
+            "line": [
+              "916 Example Street"
+            ],
+            "city": "Riverton",
+            "postalCode": "11149"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0145",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Jordan Mockford</div>"
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Contactson",
+              "given": [
+                "Pat"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "contact4@example.org"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-004-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-004-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidemia"
+            }
+          ],
+          "text": "Hyperlipidemia"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-004"
+        },
+        "onsetDateTime": "2023-11-04"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-004-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-004-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertensive disorder"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-004"
+        },
+        "onsetDateTime": "2019-01-11"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-004-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-004-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-004"
+        },
+        "onsetDateTime": "2017-03-25"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-004-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-004-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-004"
+        },
+        "effectiveDateTime": "2023-03-11",
+        "valueQuantity": {
+          "value": 5.3,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-004-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-004-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-004"
+        },
+        "effectiveDateTime": "2023-06-01",
+        "valueQuantity": {
+          "value": 57.7,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-005",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-005",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-005"
+          }
+        ],
+        "name": [
+          {
+            "family": "Demoson",
+            "given": [
+              "Morgan"
+            ]
+          }
+        ],
+        "gender": "unknown",
+        "birthDate": "1999-11-11",
+        "address": [
+          {
+            "state": "TX",
+            "country": "US",
+            "line": [
+              "902 Example Street"
+            ],
+            "city": "Springfield",
+            "postalCode": "17415"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0116",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Morgan Demoson</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-005-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-005-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ],
+          "text": "Asthma"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "onsetDateTime": "2015-05-11"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-005-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-005-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ],
+          "text": "Asthma"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "onsetDateTime": "2017-03-09"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-005-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-005-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "onsetDateTime": "2018-02-07"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-005-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-005-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "effectiveDateTime": "2023-06-13",
+        "valueQuantity": {
+          "value": 58.7,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-005-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-005-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "effectiveDateTime": "2022-01-19",
+        "valueQuantity": {
+          "value": 170.3,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-005-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-005-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 92.8,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-005-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-005-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-005"
+        },
+        "effectiveDateTime": "2022-10-03",
+        "valueQuantity": {
+          "value": 97.0,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-006",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-006",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-006"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mockford",
+            "given": [
+              "Taylor"
+            ]
+          }
+        ],
+        "gender": "unknown",
+        "birthDate": "1983-01-08",
+        "address": [
+          {
+            "state": "CA",
+            "country": "US",
+            "line": [
+              "730 Example Street"
+            ],
+            "city": "Fairview",
+            "postalCode": "73406"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0117",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Taylor Mockford</div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+            "valueAddress": {
+              "city": "Riverton",
+              "state": "CA",
+              "country": "US"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-006-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-006-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-006"
+        },
+        "onsetDateTime": "2017-05-18"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-006-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-006-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-006"
+        },
+        "onsetDateTime": "2015-03-26"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-006-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-006-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ],
+          "text": "COVID-19"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-006"
+        },
+        "onsetDateTime": "2016-07-06"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-006-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-006-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-006"
+        },
+        "effectiveDateTime": "2023-02-14",
+        "valueQuantity": {
+          "value": 64.9,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-006-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-006-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-006"
+        },
+        "effectiveDateTime": "2023-03-05",
+        "valueQuantity": {
+          "value": 84.9,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-006-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-006-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-006"
+        },
+        "effectiveDateTime": "2022-08-11",
+        "valueQuantity": {
+          "value": 151.4,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-007",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-007",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-007"
+          }
+        ],
+        "name": [
+          {
+            "family": "Synthea",
+            "given": [
+              "Sage"
+            ]
+          }
+        ],
+        "gender": "unknown",
+        "birthDate": "1945-04-27",
+        "address": [
+          {
+            "state": "CA",
+            "country": "US",
+            "line": [
+              "397 Example Street"
+            ],
+            "city": "Fairview",
+            "postalCode": "90646"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0154",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sage Synthea</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-007-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-007-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-007"
+        },
+        "effectiveDateTime": "2022-05-05",
+        "valueQuantity": {
+          "value": 193.3,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-007-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-007-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-007"
+        },
+        "effectiveDateTime": "2022-03-02",
+        "valueQuantity": {
+          "value": 87.9,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-007-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-007-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-007"
+        },
+        "effectiveDateTime": "2022-07-22",
+        "valueQuantity": {
+          "value": 116.6,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-008",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-008",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-008"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mockford",
+            "given": [
+              "Jamie"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1969-05-25",
+        "address": [
+          {
+            "state": "TX",
+            "country": "US",
+            "line": [
+              "702 Example Street"
+            ],
+            "city": "Springfield",
+            "postalCode": "40073"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0191",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Jamie Mockford</div>"
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Contactson",
+              "given": [
+                "Pat"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "contact8@example.org"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-008-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-008-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ],
+          "text": "COVID-19"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-008"
+        },
+        "onsetDateTime": "2021-08-03"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-008-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-008-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ],
+          "text": "COVID-19"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-008"
+        },
+        "onsetDateTime": "2015-03-23"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-008-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-008-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-008"
+        },
+        "effectiveDateTime": "2023-11-01",
+        "valueQuantity": {
+          "value": 171.2,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-008-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-008-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-008"
+        },
+        "effectiveDateTime": "2023-02-14",
+        "valueQuantity": {
+          "value": 109.7,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-009",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-009",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-009"
+          }
+        ],
+        "name": [
+          {
+            "family": "Mockford",
+            "given": [
+              "Rowan"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1968-08-17",
+        "address": [
+          {
+            "state": "WA",
+            "country": "US",
+            "line": [
+              "875 Example Street"
+            ],
+            "city": "Riverton",
+            "postalCode": "31365"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0105",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Rowan Mockford</div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+            "valueAddress": {
+              "city": "Riverton",
+              "state": "WA",
+              "country": "US"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-009-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-009-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "onsetDateTime": "2022-02-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-009-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-009-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ],
+          "text": "Asthma"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "onsetDateTime": "2016-07-21"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-009-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-009-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ],
+          "text": "COVID-19"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "onsetDateTime": "2022-08-08"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-009-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-009-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "effectiveDateTime": "2022-02-05",
+        "valueQuantity": {
+          "value": 5.6,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-009-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-009-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "effectiveDateTime": "2023-09-28",
+        "valueQuantity": {
+          "value": 168.8,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-009-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-009-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "effectiveDateTime": "2022-07-05",
+        "valueQuantity": {
+          "value": 156.7,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-009-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-009-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-009"
+        },
+        "effectiveDateTime": "2022-04-07",
+        "valueQuantity": {
+          "value": 151.8,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-010",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-010",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-010"
+          }
+        ],
+        "name": [
+          {
+            "family": "Demoson",
+            "given": [
+              "Jordan"
+            ]
+          }
+        ],
+        "gender": "other",
+        "birthDate": "1966-01-15",
+        "address": [
+          {
+            "state": "NY",
+            "country": "US",
+            "line": [
+              "376 Example Street"
+            ],
+            "city": "Springfield",
+            "postalCode": "73949"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0190",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Jordan Demoson</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-010-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-010-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ],
+          "text": "Asthma"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "onsetDateTime": "2020-04-17"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-010-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-010-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertensive disorder"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "onsetDateTime": "2021-10-22"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-010-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-010-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "effectiveDateTime": "2023-07-22",
+        "valueQuantity": {
+          "value": 166.7,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-010-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-010-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "effectiveDateTime": "2022-11-08",
+        "valueQuantity": {
+          "value": 5.8,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-010-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-010-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "effectiveDateTime": "2023-08-10",
+        "valueQuantity": {
+          "value": 81.4,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-010-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-010-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "effectiveDateTime": "2022-07-23",
+        "valueQuantity": {
+          "value": 5.1,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-010-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-010-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "effectiveDateTime": "2023-09-15",
+        "valueQuantity": {
+          "value": 62.1,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-010-5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-010-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-010"
+        },
+        "effectiveDateTime": "2023-12-01",
+        "valueQuantity": {
+          "value": 7.8,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-011",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-011",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-011"
+          }
+        ],
+        "name": [
+          {
+            "family": "Synthea",
+            "given": [
+              "Quinn"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1976-04-25",
+        "address": [
+          {
+            "state": "WA",
+            "country": "US",
+            "line": [
+              "607 Example Street"
+            ],
+            "city": "Springfield",
+            "postalCode": "68834"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0183",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Quinn Synthea</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-011-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-011-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidemia"
+            }
+          ],
+          "text": "Hyperlipidemia"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-011"
+        },
+        "onsetDateTime": "2017-03-14"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-011-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-011-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-011"
+        },
+        "effectiveDateTime": "2022-01-25",
+        "valueQuantity": {
+          "value": 83.5,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-011-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-011-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-011"
+        },
+        "effectiveDateTime": "2023-10-14",
+        "valueQuantity": {
+          "value": 90.4,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-011-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-011-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-011"
+        },
+        "effectiveDateTime": "2023-09-24",
+        "valueQuantity": {
+          "value": 60.6,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-pat-012",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "syn-pat-012",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:healthdata-insight",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:healthdata-insight:mrn",
+            "value": "SYN-012"
+          }
+        ],
+        "name": [
+          {
+            "family": "Synthea",
+            "given": [
+              "Alex"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1948-11-21",
+        "address": [
+          {
+            "state": "CA",
+            "country": "US",
+            "line": [
+              "638 Example Street"
+            ],
+            "city": "Springfield",
+            "postalCode": "17525"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-0129",
+            "use": "home"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Alex Synthea</div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+            "valueAddress": {
+              "city": "Riverton",
+              "state": "CA",
+              "country": "US"
+            }
+          }
+        ],
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Contactson",
+              "given": [
+                "Pat"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "contact12@example.org"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-012-0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-012-0",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "onsetDateTime": "2017-11-16"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-012-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-012-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertensive disorder"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "onsetDateTime": "2022-01-18"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-cond-012-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "syn-cond-012-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "onsetDateTime": "2021-08-09"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-012-0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-012-0",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "effectiveDateTime": "2023-11-24",
+        "valueQuantity": {
+          "value": 105.6,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-012-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-012-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "effectiveDateTime": "2022-05-16",
+        "valueQuantity": {
+          "value": 87.4,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-012-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-012-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "effectiveDateTime": "2023-02-18",
+        "valueQuantity": {
+          "value": 194.0,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:syn-obs-012-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "syn-obs-012-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "Patient/syn-pat-012"
+        },
+        "effectiveDateTime": "2022-08-07",
+        "valueQuantity": {
+          "value": 7.6,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    }
+  ]
+}

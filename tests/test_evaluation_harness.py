@@ -1,0 +1,147 @@
+"""Tests for the evaluation harness itself (defect injection and PHI ground truth).
+
+The harness produces the numbers in EVALUATION.md, so it is tested like product code. These tests use small
+hand-built resources and don't need the Synthea download.
+"""
+
+from __future__ import annotations
+
+import random
+from datetime import datetime, timezone
+
+import pytest
+
+from conftest import good_condition, good_observation, good_patient, stored
+from evaluation import defects, phi_truth
+from evaluation.data import DATA_PATH, batches
+from healthdata_insight.validation import validate_dataset
+
+NOW = datetime(2026, 10, 3, tzinfo=timezone.utc)
+
+
+def dataset(n: int = 6):
+    """n patients, each in its own file (as in Synthea: one bundle per patient)."""
+    out = []
+    for i in range(n):
+        pid = f"p{i}"
+        resources = [
+            good_patient(pid, identifier=[{"system": "urn:mrn", "value": f"MRN-{i}"}],
+                         name=[{"family": f"Family{i}", "given": [f"Given{i}"]}],
+                         telecom=[{"system": "phone", "value": f"555-01{i:02d}"}],
+                         address=[{"line": [f"{i} Example St"], "city": "Town", "postalCode": f"0{i}234",
+                                   "state": "MA"}]),
+            good_condition(f"c{i}", subject={"reference": f"Patient/{pid}"},
+                           abatementDateTime="2012-01-01", clinicalStatus={"coding": [{"code": "resolved"}]}),
+            good_observation(f"o{i}a", subject={"reference": f"Patient/{pid}"}),
+            good_observation(f"o{i}b", subject={"reference": f"Patient/{pid}"},
+                             effectiveDateTime="2023-02-01T10:00:00Z", valueQuantity={"value": 80, "unit": "/min"}),
+        ]
+        out += [type(s)(len(out) + k + 1, f"patient{i}.json", s.resource) for k, s in enumerate(stored(*resources))]
+    return out
+
+
+@pytest.mark.parametrize("defect", defects.VALIDATION_DEFECTS + defects.QUALITY_DEFECTS, ids=lambda d: d.name)
+def test_every_defect_produces_its_expected_code(defect):
+    resources = dataset()
+    mutated, injections = defects.inject(resources, [defect], 3, random.Random(1))
+    assert injections, f"{defect.name} found nothing to mutate"
+    report = validate_dataset(mutated, now=NOW)
+    for injection in injections:
+        codes = {i.code for i in report.issues if i.record_key == injection.key}
+        assert defect.expected in codes, (defect.name, codes)
+
+
+def test_injection_mutates_copies_and_never_the_same_resource_twice():
+    resources = dataset()
+    originals = [s.resource for s in resources]
+    snapshot = [dict(r) for r in originals]
+    mutated, injections = defects.inject(resources, defects.VALIDATION_DEFECTS, 3, random.Random(2))
+    keys = [i.key for i in injections]
+    assert len(keys) == len(set(keys))
+    assert [dict(r) for r in originals] == snapshot  # inputs untouched
+    assert {s.key for s in mutated} == {s.key for s in resources}
+
+
+def test_injection_is_deterministic_for_a_seed():
+    first = defects.inject(dataset(), defects.QUALITY_DEFECTS, 2, random.Random(7))[1]
+    second = defects.inject(dataset(), defects.QUALITY_DEFECTS, 2, random.Random(7))[1]
+    assert [(i.key, i.defect.name) for i in first] == [(i.key, i.defect.name) for i in second]
+
+
+def test_unclean_baseline_is_free_of_errors():
+    report = validate_dataset(dataset(), now=NOW)
+    assert report.invalid_record_count == 0
+
+
+@pytest.mark.parametrize("case", defects.DUPLICATE_CASES, ids=lambda c: c.name)
+def test_duplicate_cases_behave_as_labelled_in_isolation(case):
+    resources = dataset()
+    augmented, injections = defects.inject_duplicates(resources, 0, random.Random(3))
+    assert injections == []  # per_case=0 adds nothing
+    source = next(s for s in resources if s.resource["resourceType"] == case.resource_type)
+    record = case.make(source.resource, 1)
+    assert record is not None
+    new_key = max(s.key for s in resources) + 1
+    report = validate_dataset([*resources, type(source)(new_key, source.file_name, record)], now=NOW)
+    flagged = {i.code for i in report.issues if i.record_key == new_key and i.dimension.value == "uniqueness"}
+    if case.expected is not None:
+        assert case.expected in flagged
+    else:
+        assert not flagged  # either a true negative, or the known miss (fuzzy re-registration)
+
+
+def test_phi_labels_follow_the_reference_policy():
+    patient = good_patient("p1", identifier=[{"system": "urn:mrn", "value": "MRN-1"}],
+                           name=[{"family": "Examplefam101", "given": ["Givenone202"]}],
+                           telecom=[{"system": "phone", "value": "555-010-0199"}],
+                           address=[{"line": ["1 Sample Road"], "city": "Sampletown", "postalCode": "09999",
+                                     "state": "Massachusetts",
+                                     "extension": [{"url": phi_truth.GEOLOCATION, "extension": []}]}],
+                           text={"div": "<div>Generated by Synthea</div>"})
+    encounter = {"resourceType": "Encounter", "id": "e1",
+                 "subject": {"reference": "urn:uuid:p1", "display": "Mr. Givenone202 Examplefam101"},
+                 "serviceProvider": {"reference": "urn:uuid:o1", "display": "SAMPLETOWN HOSPITAL"}}
+    request = {"resourceType": "MedicationRequest", "id": "m1",
+               "requester": {"reference": "urn:uuid:d1", "display": "Dr. Othergiven303 Examplefam101"}}
+    labels = {c.path: c.is_phi for c in phi_truth.label_dataset(stored(patient, encounter, request), NOW)}
+    assert labels["Patient.address[0].line"] and labels["Patient.address[0].postalCode"]
+    assert labels["Patient.address[0].extension"]  # latitude / longitude
+    assert labels["Patient.address[0].state"] is False
+    assert labels["Patient.text.div"] is False  # generic narrative
+    assert labels["Encounter.subject.display"] is True
+    assert labels["Encounter.serviceProvider.display"] is False
+    assert labels["MedicationRequest.requester.display"] is False  # shares only the surname: a clinician
+
+
+def test_free_text_matching_is_whole_token():
+    assert phi_truth.mentions("call 555-0100 today", {"555-0100"})
+    assert not phi_truth.mentions("id 9555-01001", {"555-0100"})
+    assert not phi_truth.mentions("abc09999def", {"09999"})
+
+
+def test_planting_labels_each_item_once_per_patient():
+    resources = dataset(3)
+    planted, candidates = phi_truth.plant(resources, random.Random(4))
+    per_item = {}
+    for c in candidates:
+        per_item[c.reason] = per_item.get(c.reason, 0) + 1
+    # Each patient has 2 observations and 1 condition, so condition items compete for the one condition.
+    assert per_item["observation_narrative_with_name"] == 3
+    assert per_item["observation_narrative_decoy"] == 3
+    assert sum(per_item.get(k, 0) for k in ("condition_note_with_address", "condition_subject_display_name",
+                                             "condition_asserter_display_decoy")) == 3
+    assert all(c.planted for c in candidates)
+    assert len(planted) == len(resources)
+
+
+def test_batches_cover_every_patient_once():
+    names = [f"f{i}" for i in range(23)]
+    chunks = batches(names, 10)
+    assert [len(c) for c in chunks] == [10, 10, 3] and sum(chunks, []) == names
+
+
+@pytest.mark.skipif(not DATA_PATH.exists(), reason="Synthea dataset not downloaded")
+def test_downloaded_dataset_matches_the_pinned_checksum():
+    from evaluation.data import DATA_SHA256, sha256_of
+
+    assert sha256_of(DATA_PATH) == DATA_SHA256
