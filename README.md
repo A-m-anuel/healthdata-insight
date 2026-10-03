@@ -179,7 +179,7 @@ More: [LIMITATIONS.md](LIMITATIONS.md) · [SECURITY.md](SECURITY.md)
 only the Python charts appear.
 
 ```powershell
-git clone <repository-url> healthdata-insight
+git clone https://github.com/A-m-anuel/healthdata-insight.git
 cd healthdata-insight
 python -m venv .venv
 .venv\Scripts\activate                       # macOS/Linux: source .venv/bin/activate

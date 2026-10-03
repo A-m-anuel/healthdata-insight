@@ -1,6 +1,10 @@
-# HealthData Insight: A FHIR R4 Healthcare Data Quality, Privacy, and Public Health Analytics Platform
+# HealthData Insight
 
-**Technical report · Version 1.0 · October 2026**
+**A FHIR R4 Healthcare Data Quality, Privacy, and Public Health Analytics Platform**
+
+**Author:** Amanuel Abate Seid<br>
+**Version:** 1.0.0<br>
+**Date:** October 3, 2026
 
 > **Scope.** This report describes a research prototype that was built and evaluated **exclusively on synthetic data**
 > (Synthea). The system is not HIPAA compliant, not clinically validated, not endorsed by the CDC or any public-health
